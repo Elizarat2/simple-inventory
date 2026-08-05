@@ -4,40 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Inventory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <header>
-    <h1>Simple Inventory</h1>
-    <p>Reingeniería de Sistemas &mdash; Universidad EPCA</p>
+
+  <header class="site-header">
+    <div class="hazard-strip" aria-hidden="true"></div>
+    <div class="header-content">
+      <span class="eyebrow">Reingeniería de Sistemas · Universidad EPCA</span>
+      <h1>Simple&nbsp;Inventory</h1>
+    </div>
   </header>
 
   <main>
-    <section class="form-card">
-      <h2>Agregar producto</h2>
+    <section class="ticket" aria-labelledby="ticket-title">
+      <span class="ticket-tab">Nuevo registro</span>
+      <h2 id="ticket-title">Dar de alta un producto</h2>
       <form id="item-form">
-        <input type="text" id="name" placeholder="Nombre del producto" required>
-        <input type="number" id="quantity" placeholder="Cantidad" min="0" value="0">
-        <input type="number" id="price" placeholder="Precio" min="0" step="0.01" value="0">
-        <input type="text" id="category" placeholder="Categoría (opcional)">
-        <button type="submit">Agregar</button>
+        <div class="field">
+          <label for="name">Producto</label>
+          <input type="text" id="name" placeholder="Ej. Cable HDMI" required>
+        </div>
+        <div class="field field-narrow">
+          <label for="quantity">Cantidad</label>
+          <input type="number" id="quantity" min="0" value="0">
+        </div>
+        <div class="field field-narrow">
+          <label for="price">Precio</label>
+          <input type="number" id="price" min="0" step="0.01" value="0">
+        </div>
+        <div class="field">
+          <label for="category">Categoría</label>
+          <input type="text" id="category" placeholder="Opcional">
+        </div>
+        <button type="submit">Agregar al inventario</button>
       </form>
     </section>
 
-    <section>
-      <h2>Inventario actual</h2>
+    <section class="stock-panel" aria-labelledby="stock-title">
+      <div class="stock-panel-head">
+        <h2 id="stock-title">Inventario actual</h2>
+        <span class="stock-count" id="stock-count">0 registros</span>
+      </div>
+
       <table id="items-table">
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
+            <th>Producto</th>
+            <th class="num">Cantidad</th>
+            <th class="num">Precio</th>
             <th>Categoría</th>
             <th></th>
           </tr>
         </thead>
         <tbody id="items-body"></tbody>
       </table>
+
+      <p class="empty-state" id="empty-state">Sin registros todavía — agrega el primer producto arriba.</p>
     </section>
   </main>
 

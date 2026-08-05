@@ -1,0 +1,20 @@
+[
+  "tests/test_e2e.py::test_e2e_health_endpoint",
+  "tests/test_e2e.py::test_e2e_home_title_or_content",
+  "tests/test_e2e.py::test_e2e_navigation_flow",
+  "tests/test_unit.py::test_dummy_route_1",
+  "tests/test_unit.py::test_dummy_route_10",
+  "tests/test_unit.py::test_dummy_route_11",
+  "tests/test_unit.py::test_dummy_route_12",
+  "tests/test_unit.py::test_dummy_route_13",
+  "tests/test_unit.py::test_dummy_route_2",
+  "tests/test_unit.py::test_dummy_route_3",
+  "tests/test_unit.py::test_dummy_route_4",
+  "tests/test_unit.py::test_dummy_route_5",
+  "tests/test_unit.py::test_dummy_route_6",
+  "tests/test_unit.py::test_dummy_route_7",
+  "tests/test_unit.py::test_dummy_route_8",
+  "tests/test_unit.py::test_dummy_route_9",
+  "tests/test_unit.py::test_health_check",
+  "tests/test_unit.py::test_route_index_or_fallback"
+]
