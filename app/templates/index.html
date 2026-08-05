@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Inventory</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Simple Inventory</h1>
+    <p>Reingeniería de Sistemas &mdash; Universidad EPCA</p>
+  </header>
+
+  <main>
+    <section class="form-card">
+      <h2>Agregar producto</h2>
+      <form id="item-form">
+        <input type="text" id="name" placeholder="Nombre del producto" required>
+        <input type="number" id="quantity" placeholder="Cantidad" min="0" value="0">
+        <input type="number" id="price" placeholder="Precio" min="0" step="0.01" value="0">
+        <input type="text" id="category" placeholder="Categoría (opcional)">
+        <button type="submit">Agregar</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Inventario actual</h2>
+      <table id="items-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="items-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
